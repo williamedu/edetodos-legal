@@ -20,6 +20,8 @@
 
     <div class="tarjetas">
       <a href="mailto:williamhiciano26@gmail.com?subject=EDETODOS%20-%20Consulta"><strong>✉️ Escríbenos por correo</strong><small>williamhiciano26@gmail.com</small></a>
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=williamhiciano26@gmail.com&amp;su=EDETODOS%20-%20Consulta" target="_blank" rel="noopener"><strong>Escribir desde Gmail</strong><small>Se abre en Gmail (app o navegador)</small></a>
+      <button type="button" class="copiar" data-correo="williamhiciano26@gmail.com" data-ok="¡Copiado!"><strong>📋 Copiar la dirección</strong><small>williamhiciano26@gmail.com</small></button>
     </div>
 
     <h2>Para ayudarte más rápido, incluye</h2>
@@ -54,6 +56,8 @@
 
     <div class="tarjetas">
       <a href="mailto:williamhiciano26@gmail.com?subject=EDETODOS%20-%20Inquiry"><strong>✉️ Email us</strong><small>williamhiciano26@gmail.com</small></a>
+      <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=williamhiciano26@gmail.com&amp;su=EDETODOS%20-%20Inquiry" target="_blank" rel="noopener"><strong>Write from Gmail</strong><small>Opens in Gmail (app or browser)</small></a>
+      <button type="button" class="copiar" data-correo="williamhiciano26@gmail.com" data-ok="Copied!"><strong>📋 Copy the address</strong><small>williamhiciano26@gmail.com</small></button>
     </div>
 
     <h2>To help you faster, please include</h2>
@@ -84,5 +88,21 @@
 
   <footer>EDETODOS · <a href="privacidad.html">Política de privacidad / Privacy Policy</a> · <a href="terminos.html">Términos de uso / Terms of Use</a></footer>
 </main>
+<script>
+  // Botones "Copiar": copian el correo y lo avisan en el mismo botón.
+  document.querySelectorAll('button.copiar').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var correo = b.getAttribute('data-correo');
+      var aviso = b.querySelector('small');
+      var original = aviso.textContent;
+      function listo() { aviso.textContent = b.getAttribute('data-ok'); setTimeout(function () { aviso.textContent = original; }, 2000); }
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(correo).then(listo, function () { window.prompt('Email:', correo); });
+      } else {
+        window.prompt('Email:', correo);
+      }
+    });
+  });
+</script>
 </body>
 </html>

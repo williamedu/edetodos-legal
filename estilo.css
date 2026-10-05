@@ -35,7 +35,8 @@ ul { padding-left: 22px; }
 section + section { border-top: 1px solid var(--borde); margin-top: 48px; padding-top: 24px; }
 .tarjetas { display: grid; gap: 12px; margin-top: 24px; }
 .tarjetas a { display: block; padding: 18px; border-radius: 16px; background: var(--tarjeta); border: 1px solid var(--borde); text-decoration: none; color: var(--texto); }
-.tarjetas a:hover { border-color: var(--ambar); }
+.tarjetas a:hover, .tarjetas button:hover { border-color: var(--ambar); }
+.tarjetas button { display: block; width: 100%; text-align: left; font: inherit; cursor: pointer; padding: 18px; border-radius: 16px; background: var(--tarjeta); border: 1px solid var(--borde); color: var(--texto); }
 .tarjetas strong { display: block; font-size: 1.05rem; color: #fff; }
 .tarjetas small { color: var(--suave); }
 footer { margin-top: 48px; color: var(--suave); font-size: 0.88rem; }
